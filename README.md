@@ -1,5 +1,10 @@
 # carcusc
 
+[![Release](https://img.shields.io/github/v/release/ourarash/carcusc?display_name=tag)](https://github.com/ourarash/carcusc/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Course: EE508](https://img.shields.io/badge/Course-EE508-blue)](https://www.carc.usc.edu/)
+[![Platform: USC CARC](https://img.shields.io/badge/Platform-USC%20CARC-red)](https://www.carc.usc.edu/)
+
 Practical CUDA setup, profiling, and example workflows for the USC CARC cluster.
 
 This repository is prepared for **EE508 - Hardware Foundations for Machine Learning** and is intended to make it straightforward to:
@@ -161,6 +166,12 @@ Additional example details are in:
 - `profiling/README.md` — profiling workflow and EBS node guidance
 - `cuda/README.md` — overview of the CUDA teaching examples
 - `cuda/vector_add/README.md` — build and run instructions for the vector-add benchmark
+- `docs/releases/v1.0.0.md` — release notes for the first polished course-ready version
+
+## Release Notes
+
+The current tagged release is `v1.0.0`.
+See `docs/releases/v1.0.0.md` for the release summary and highlights.
 
 ## License
 
