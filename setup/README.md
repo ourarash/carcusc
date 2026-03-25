@@ -1,8 +1,8 @@
-Setup folder overview
-=====================
+# Setup
 
-Fastest way to start
---------------------
+Use this folder to request an allocation, load a working CUDA environment, and run a smoke test on CARC.
+
+## Fastest Way to Start
 
 From the login node, run:
 
@@ -11,14 +11,15 @@ cd carcusc
 ./setup/start_cuda.sh
 ```
 
-That one command will:
+This assumes the repository is cloned into your home directory.
+
+That command will:
 1. Request a GPU allocation
-2. Move you to the compute node
+2. Move you to a compute node
 3. Load the CUDA-ready module environment automatically
 4. Leave you in an interactive shell
 
-Default mode
-------------
+## Default Mode
 
 `./setup/start_cuda.sh` defaults to `debug-gpu`.
 
@@ -36,8 +37,7 @@ You can also choose a mode explicitly:
 
 `debug-ebs` targets `e23-02`, where EBS (event based sampling) is enabled for profiling.
 
-After the launcher starts
--------------------------
+## After the Launcher Starts
 
 Verify you are on a compute node:
 
@@ -64,8 +64,8 @@ bash ./profiling/run_ncu.sh --wait
 Profiling outputs are written under `./profiling/results/`.
 `run_profile.sh` using Nsight Systems is verified working here.
 `run_ncu.sh` may fail on this cluster if GPU performance counters are restricted.
-If you want to run `ncu`, do not use the default launcher mode.
-Start with the EBS-enabled node instead:
+
+If you want to run `ncu`, do not use the default launcher mode. Start with the EBS-enabled node instead:
 
 ```bash
 ./setup/start_cuda.sh debug-ebs
@@ -81,7 +81,7 @@ bash ./profiling/run_ncu.sh
 You should expect `hostname` to start with `e23-02`.
 That is the debug-partition node currently configured for EBS (event based sampling).
 
-In short:
+Short version:
 
 ```bash
 cd carcusc
@@ -98,15 +98,14 @@ If it is busy, the script prints:
 By default it exits after showing that information.
 Use `--wait` if you want it to keep polling until `e23-02` becomes free.
 
-Compile your own CUDA program:
+## Compile Your Own CUDA Program
 
 ```bash
 nvcc my_program.cu -o my_program
 ./my_program
 ```
 
-Manual workflow
----------------
+## Manual Workflow
 
 If you want to do the steps yourself:
 
@@ -117,8 +116,7 @@ source ./setup/module.sh
 bash ./setup/test_cuda.sh
 ```
 
-What each file does
--------------------
+## What Each File Does
 
 - `start_cuda.sh` — one-command launcher
 - `gpu_alloc.sh` — allocate a node and open a shell
@@ -126,16 +124,14 @@ What each file does
 - `test_cuda.sh` — compile and run a CUDA smoke test
 - `setup.sh` — checklist/reference notes
 
-Profiling folder
-----------------
+## Profiling Folder
 
 - `profiling/profile_demo.cu` — CUDA kernel used for profiling
 - `profiling/run_profile.sh` — Nsight Systems (`nsys`) profiler runner
 - `profiling/run_ncu.sh` — Nsight Compute (`ncu`) profiler runner
 - `profiling/results/` — generated profiler reports
 
-When finished
--------------
+## When Finished
 
 Exit the compute-node shell to release the allocation:
 

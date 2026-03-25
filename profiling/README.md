@@ -36,6 +36,8 @@ cd carcusc
 ./setup/start_cuda.sh
 ```
 
+This assumes the repository is cloned into your home directory.
+
 For the EBS node specifically:
 
 ```bash

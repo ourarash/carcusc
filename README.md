@@ -1,6 +1,6 @@
 # carcusc
 
-CUDA setup, profiling, and benchmark helpers for USC CARC cluster workflows.
+Practical CUDA setup, profiling, and example workflows for the USC CARC cluster.
 
 This repository is prepared for **EE508 - Hardware Foundations for Machine Learning** and is intended to make it straightforward to:
 
@@ -8,17 +8,17 @@ This repository is prepared for **EE508 - Hardware Foundations for Machine Learn
 - load a working CUDA toolchain
 - validate CUDA execution end to end
 - run basic profiling experiments with Nsight Systems and Nsight Compute
-- compare simple CPU and GPU implementations of CUDA examples
+- compare simple CPU and GPU implementations
 
 ## Overview
 
-The repository is organized around three practical tasks:
+The repository is organized around three practical areas:
 
 - `setup/` for cluster allocation and environment setup
 - `profiling/` for Nsight-based profiling workflows
 - `cuda/` for small standalone CUDA programs and benchmarks
 
-The goal is not to be a generic CUDA framework. It is a lightweight, course-oriented working environment for cluster-based CUDA experiments.
+The goal is not to be a general CUDA framework. It is a lightweight, course-oriented working environment for cluster-based CUDA experiments.
 
 ## Repository Layout
 
@@ -38,6 +38,8 @@ ssh <username>@discovery.usc.edu
 
 You need to be on the USC VPN before connecting.
 For CARC documentation and cluster information, see: https://www.carc.usc.edu/
+
+Assuming the repository is cloned into your home directory:
 
 ```bash
 cd carcusc
@@ -84,11 +86,11 @@ If you need to wait for the EBS node to become available:
 bash ./profiling/run_ncu.sh --wait
 ```
 
-Additional profiling details are in `profiling/README.md`.
+See `profiling/README.md` for additional profiling details.
 
 ## CUDA Examples
 
-The `cuda/` folder contains small, self-contained CUDA programs intended for learning, benchmarking, and experimentation.
+The `cuda/` folder contains small, self-contained CUDA programs for learning, benchmarking, and experimentation.
 
 Current examples:
 
@@ -130,7 +132,7 @@ make
 make run
 ```
 
-Additional example-specific details are in:
+Additional example details are in:
 
 - `cuda/README.md`
 - `cuda/vector_add/README.md`
@@ -157,6 +159,7 @@ Additional example-specific details are in:
 
 - `setup/README.md` — startup workflow and allocation modes
 - `profiling/README.md` — profiling workflow and EBS node guidance
+- `cuda/README.md` — overview of the CUDA teaching examples
 - `cuda/vector_add/README.md` — build and run instructions for the vector-add benchmark
 
 ## License
