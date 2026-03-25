@@ -1,0 +1,126 @@
+# carcusc
+
+CUDA setup, profiling, and benchmark helpers for USC CARC cluster workflows.
+
+This repository is prepared for **EE508 - Hardware Foundations for Machine Learning** and is intended to make it straightforward to:
+
+- request GPU nodes on CARC
+- load a working CUDA toolchain
+- validate CUDA execution end to end
+- run basic profiling experiments with Nsight Systems and Nsight Compute
+- compare simple CPU and GPU implementations of CUDA examples
+
+## Overview
+
+The repository is organized around three practical tasks:
+
+- `setup/` for cluster allocation and environment setup
+- `profiling/` for Nsight-based profiling workflows
+- `cuda/` for small standalone CUDA programs and benchmarks
+
+The goal is not to be a generic CUDA framework. It is a lightweight, course-oriented working environment for cluster-based CUDA experiments.
+
+## Repository Layout
+
+- `setup/` — Slurm allocation helpers, module setup, and CUDA smoke tests
+- `profiling/` — CUDA profiling demo plus `nsys` and `ncu` runners
+- `cuda/` — standalone CUDA examples with simple build targets
+
+## Quick Start
+
+From the login node:
+
+```bash
+cd /home1/saifhash/carcusc
+./setup/start_cuda.sh
+```
+
+This will:
+
+1. request a GPU allocation
+2. open an interactive shell on the compute node
+3. load the CUDA module environment automatically
+
+Then verify the environment:
+
+```bash
+nvidia-smi
+bash ./setup/test_cuda.sh
+```
+
+## Running Profilers
+
+### Nsight Systems
+
+Run:
+
+```bash
+bash ./profiling/run_profile.sh
+```
+
+This path is already verified working in the current environment.
+
+### Nsight Compute
+
+For `ncu`, use the EBS-enabled node path:
+
+```bash
+./setup/start_cuda.sh debug-ebs
+bash ./profiling/run_ncu.sh
+```
+
+If you need to wait for the EBS node to become available:
+
+```bash
+bash ./profiling/run_ncu.sh --wait
+```
+
+Additional profiling details are in `profiling/README.md`.
+
+## CUDA Examples
+
+### Vector Add Benchmark
+
+The repository includes a simple CPU-vs-GPU benchmark at:
+
+- `cuda/vector_add/`
+
+Build and run it on a compute node with modules loaded:
+
+```bash
+cd cuda/vector_add
+make
+make run
+```
+
+The program reports:
+
+- CPU execution time
+- GPU kernel execution time
+- GPU total time including host-device transfers
+- correctness validation
+- simple speedup estimates
+
+## Common Launcher Modes
+
+- `./setup/start_cuda.sh` — default debug GPU allocation
+- `./setup/start_cuda.sh debug-ebs` — target `e23-02` for `ncu` / EBS
+- `./setup/start_cuda.sh debug-a40` — request an A40 on debug
+- `./setup/start_cuda.sh p100` — request a P100 on the GPU partition
+- `./setup/start_cuda.sh debug-cpu` — CPU-only debug allocation
+
+## Notes
+
+- `nvidia-smi` works only on a compute node with an active allocation.
+- `nvcc` is configured to use `/usr/bin/g++` to avoid the GCC 13 header mismatch seen with the cluster toolchain.
+- `run_profile.sh` is verified working.
+- `run_ncu.sh` depends on EBS / GPU performance counter availability.
+
+## Documentation
+
+- `setup/README.md` — startup workflow and allocation modes
+- `profiling/README.md` — profiling workflow and EBS node guidance
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE` for details.

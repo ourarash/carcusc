@@ -1,0 +1,23 @@
+# Compiled binaries
+profiling/profile_demo
+cuda/vector_add/vector_add
+
+# Profiling outputs
+profiling/results/
+*.nsys-rep
+*.sqlite
+*.ncu-rep
+*.qdstrm
+*.nsight-cuprof-report
+
+# Generated text summaries
+profiling/*.txt
+
+# Editor / Python noise
+__pycache__/
+*.pyc
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
