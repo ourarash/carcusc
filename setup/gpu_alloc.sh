@@ -30,7 +30,7 @@
 
 set -euo pipefail
 
-ACCOUNT="saifhash_1190"
+ACCOUNT="${CARC_ACCOUNT:-${USER}_1190}"
 
 launch_shell() {
   exec salloc "$@" srun --pty bash -l

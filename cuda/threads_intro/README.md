@@ -11,7 +11,8 @@ This example introduces the most basic CUDA execution concept: **threads inside 
 ## Build and Run
 
 ```bash
-cd /home1/saifhash/carcusc/cuda/threads_intro
+cd carcusc
+cd cuda/threads_intro
 make
 make run
 ```

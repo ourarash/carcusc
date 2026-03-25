@@ -27,7 +27,7 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 REPO_ROOT=$(cd "$SCRIPT_DIR/.." && pwd)
 export REPO_ROOT
 
-ACCOUNT="saifhash_1190"
+ACCOUNT="${CARC_ACCOUNT:-${USER}_1190}"
 MODE="${1:-debug-gpu}"
 
 usage() {
@@ -38,8 +38,8 @@ usage() {
 alloc_args() {
     case "$MODE" in
         debug-cpu)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=00:30:00
 --cpus-per-task=4
 --mem=8G
@@ -48,8 +48,8 @@ alloc_args() {
 EOF
             ;;
         debug-gpu)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=00:30:00
 --cpus-per-task=4
 --mem=8G
@@ -59,8 +59,8 @@ EOF
 EOF
             ;;
         debug-a40)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=01:00:00
 --cpus-per-task=4
 --mem=8G
@@ -70,8 +70,8 @@ EOF
 EOF
             ;;
         debug-ebs)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=01:00:00
 --cpus-per-task=4
 --mem=8G
@@ -82,8 +82,8 @@ EOF
 EOF
             ;;
         p100)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=01:00:00
 --cpus-per-task=8
 --mem=32G
@@ -93,8 +93,8 @@ EOF
 EOF
             ;;
         l40s)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=00:30:00
 --cpus-per-task=4
 --mem=8G
@@ -105,8 +105,8 @@ EOF
 EOF
             ;;
         a40)
-            cat <<'EOF'
---account=saifhash_1190
+            cat <<EOF
+--account=$ACCOUNT
 --time=01:00:00
 --cpus-per-task=4
 --mem=8G

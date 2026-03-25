@@ -19,7 +19,7 @@ It is intended as a minimal CUDA benchmark for:
 Run this on a compute node with the CARC CUDA environment loaded:
 
 ```bash
-cd /home1/saifhash/carcusc
+cd carcusc
 ./setup/start_cuda.sh
 cd cuda/vector_add
 make
@@ -52,7 +52,8 @@ The program prints:
 Typical usage:
 
 ```bash
-cd /home1/saifhash/carcusc/cuda/vector_add
+cd carcusc
+cd cuda/vector_add
 make clean
 make
 make run

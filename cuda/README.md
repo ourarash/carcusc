@@ -23,7 +23,7 @@ This folder contains small, focused CUDA programs for students learning GPU prog
 Start on a compute node with the repository setup flow:
 
 ```bash
-cd /home1/saifhash/carcusc
+cd carcusc
 ./setup/start_cuda.sh
 ```
 

@@ -11,7 +11,8 @@ This example shows how CUDA organizes work into **multiple blocks**, each contai
 ## Build and Run
 
 ```bash
-cd /home1/saifhash/carcusc/cuda/blocks_intro
+cd carcusc
+cd cuda/blocks_intro
 make
 make run
 ```

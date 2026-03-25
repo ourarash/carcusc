@@ -12,7 +12,8 @@ This example introduces a basic **parallel reduction** in CUDA using shared memo
 ## Build and Run
 
 ```bash
-cd /home1/saifhash/carcusc/cuda/reduction
+cd carcusc
+cd cuda/reduction
 make
 make run
 ```

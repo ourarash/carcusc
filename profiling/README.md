@@ -32,7 +32,7 @@ scontrol show node e23-02
 Start a shell on a compute node:
 
 ```bash
-cd /home1/saifhash/carcusc
+cd carcusc
 ./setup/start_cuda.sh
 ```
 

@@ -7,7 +7,7 @@ Fastest way to start
 From the login node, run:
 
 ```bash
-cd /home1/saifhash/carcusc
+cd carcusc
 ./setup/start_cuda.sh
 ```
 
@@ -84,7 +84,7 @@ That is the debug-partition node currently configured for EBS (event based sampl
 In short:
 
 ```bash
-cd /home1/saifhash/carcusc
+cd carcusc
 ./setup/start_cuda.sh debug-ebs
 bash ./profiling/run_ncu.sh
 ```
@@ -111,7 +111,7 @@ Manual workflow
 If you want to do the steps yourself:
 
 ```bash
-cd /home1/saifhash/carcusc
+cd carcusc
 ./setup/gpu_alloc.sh debug-gpu
 source ./setup/module.sh
 bash ./setup/test_cuda.sh

@@ -12,7 +12,8 @@ This example shows how a **grid** of blocks can cover more data than there are t
 ## Build and Run
 
 ```bash
-cd /home1/saifhash/carcusc/cuda/grid_stride_intro
+cd carcusc
+cd cuda/grid_stride_intro
 make
 make run
 ```
