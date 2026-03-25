@@ -37,6 +37,7 @@ ssh <username>@discovery.usc.edu
 ```
 
 You need to be on the USC VPN before connecting.
+For CARC documentation and cluster information, see: https://www.carc.usc.edu/
 
 ```bash
 cd /home1/saifhash/carcusc
