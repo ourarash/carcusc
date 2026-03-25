@@ -30,6 +30,14 @@ The goal is not to be a generic CUDA framework. It is a lightweight, course-orie
 
 🚀 From the login node:
 
+First connect to USC CARC:
+
+```bash
+ssh <username>@discovery.usc.edu
+```
+
+You need to be on the USC VPN before connecting.
+
 ```bash
 cd /home1/saifhash/carcusc
 ./setup/start_cuda.sh
@@ -81,6 +89,14 @@ Additional profiling details are in `profiling/README.md`.
 
 The `cuda/` folder contains small, self-contained CUDA programs intended for learning, benchmarking, and experimentation.
 
+Current examples:
+
+- `cuda/threads_intro/` — one block, multiple threads
+- `cuda/blocks_intro/` — multiple blocks and global indexing
+- `cuda/grid_stride_intro/` — grid-stride loop pattern
+- `cuda/vector_add/` — CPU vs GPU timing for vector addition
+- `cuda/reduction/` — shared-memory reduction with block partial sums
+
 ### Vector Add Benchmark
 
 🧮 The repository includes a simple CPU-vs-GPU benchmark at:
@@ -108,12 +124,16 @@ Example workflow:
 ```bash
 cd /home1/saifhash/carcusc
 ./setup/start_cuda.sh
-cd cuda/vector_add
+cd cuda/threads_intro
 make
 make run
 ```
 
-Additional example-specific details are in `cuda/vector_add/README.md`.
+Additional example-specific details are in:
+
+- `cuda/README.md`
+- `cuda/vector_add/README.md`
+- `cuda/reduction/README.md`
 
 ## Common Launcher Modes
 

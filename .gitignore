@@ -1,6 +1,10 @@
 # Compiled binaries
 profiling/profile_demo
 cuda/vector_add/vector_add
+cuda/threads_intro/threads_intro
+cuda/blocks_intro/blocks_intro
+cuda/grid_stride_intro/grid_stride_intro
+cuda/reduction/reduction
 
 # Profiling outputs
 profiling/results/
