@@ -79,6 +79,8 @@ Additional profiling details are in `profiling/README.md`.
 
 ## CUDA Examples
 
+The `cuda/` folder contains small, self-contained CUDA programs intended for learning, benchmarking, and experimentation.
+
 ### Vector Add Benchmark
 
 The repository includes a simple CPU-vs-GPU benchmark at:
@@ -101,6 +103,18 @@ The program reports:
 - correctness validation
 - simple speedup estimates
 
+Example workflow:
+
+```bash
+cd /home1/saifhash/carcusc
+./setup/start_cuda.sh
+cd cuda/vector_add
+make
+make run
+```
+
+Additional example-specific details are in `cuda/vector_add/README.md`.
+
 ## Common Launcher Modes
 
 - `./setup/start_cuda.sh` — default debug GPU allocation
@@ -120,6 +134,7 @@ The program reports:
 
 - `setup/README.md` — startup workflow and allocation modes
 - `profiling/README.md` — profiling workflow and EBS node guidance
+- `cuda/vector_add/README.md` — build and run instructions for the vector-add benchmark
 
 ## License
 
