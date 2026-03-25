@@ -28,7 +28,7 @@ The goal is not to be a generic CUDA framework. It is a lightweight, course-orie
 
 ## Quick Start
 
-From the login node:
+🚀 From the login node:
 
 ```bash
 cd /home1/saifhash/carcusc
@@ -52,7 +52,7 @@ bash ./setup/test_cuda.sh
 
 ### Nsight Systems
 
-Run:
+📈 Run:
 
 ```bash
 bash ./profiling/run_profile.sh
@@ -62,7 +62,7 @@ This path is already verified working in the current environment.
 
 ### Nsight Compute
 
-For `ncu`, use the EBS-enabled node path:
+🔬 For `ncu`, use the EBS-enabled node path:
 
 ```bash
 ./setup/start_cuda.sh debug-ebs
@@ -83,7 +83,7 @@ The `cuda/` folder contains small, self-contained CUDA programs intended for lea
 
 ### Vector Add Benchmark
 
-The repository includes a simple CPU-vs-GPU benchmark at:
+🧮 The repository includes a simple CPU-vs-GPU benchmark at:
 
 - `cuda/vector_add/`
 
@@ -125,6 +125,8 @@ Additional example-specific details are in `cuda/vector_add/README.md`.
 
 ## Notes
 
+💡 Useful reminders:
+
 - `nvidia-smi` works only on a compute node with an active allocation.
 - `nvcc` is configured to use `/usr/bin/g++` to avoid the GCC 13 header mismatch seen with the cluster toolchain.
 - `run_profile.sh` is verified working.
@@ -138,4 +140,4 @@ Additional example-specific details are in `cuda/vector_add/README.md`.
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+📄 This project is licensed under the MIT License. See `LICENSE` for details.
